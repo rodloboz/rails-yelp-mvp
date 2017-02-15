@@ -2,3 +2,12 @@
 <p><strong>Address: </strong><%= @restaurant.address %></p>
 <p><strong>Phone: </strong><%= @restaurant.phone_number %></p>
 <p><strong>Category: </strong><%= @restaurant.category %></p>
+<hr>
+<h3>Reviews</h3>
+<% @restaurant.reviews.each do |review| %>
+  <p><strong>Content: </strong><%= review.content %></p>
+  <p><strong>Raing: </strong><%= review.rating %></p>
+  <hr>
+<% end %>
+<hr>
+<%= render 'new_review_form' %>
